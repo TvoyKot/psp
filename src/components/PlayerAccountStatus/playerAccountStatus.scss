@@ -1,0 +1,20 @@
+.wrapper {
+  margin: 0 auto;
+  max-width: 400px;
+  border-radius: 20px;
+  border: 1px solid black;
+  padding: 4px;
+  position: relative;
+  backdrop-filter: blur(2px);
+  & > :first-child {
+    margin-bottom: 5px;
+  }
+  & > p {
+    text-align: center;
+  }
+}
+.player-fields {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
