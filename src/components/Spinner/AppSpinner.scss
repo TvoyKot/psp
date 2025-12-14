@@ -1,0 +1,32 @@
+.loader {
+  display: block;
+  margin: 0 auto;
+  border: 2px solid;
+  border-color: transparent black;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  position: relative;
+  box-sizing: border-box;
+  animation: rotation 2s linear infinite;
+  &::after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: 24px solid;
+    border-color: transparent rgba(51, 122, 183, 0.55);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

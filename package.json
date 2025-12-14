@@ -36,11 +36,19 @@
     ]
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.22",
+    "postcss": "^8.5.6",
     "sass": "^1.94.0",
-    "sass-loader": "^16.0.6"
+    "sass-loader": "^16.0.6",
+    "tailwindcss": "^4.1.18"
   },
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
     "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

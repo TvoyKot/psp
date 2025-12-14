@@ -1,0 +1,29 @@
+.wrapper {
+  margin: 0 auto;
+  max-width: 440px;
+  border-radius: 20px;
+  border: 1px solid black;
+  padding: 4px 10px;
+  position: relative;
+  backdrop-filter: blur(2px);
+  .tabs-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tab-button {
+    height: 30px;
+    padding: 4px 10px;
+    border-radius: 10px;
+    &:nth-child(2) {
+      margin-left: 4px;
+    }
+    
+  }
+  .select {
+    height: 30px;
+    padding: 4px 8px;
+    backdrop-filter: blur(2px);
+    border-radius: 10px;
+  }
+}

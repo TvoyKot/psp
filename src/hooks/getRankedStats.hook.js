@@ -1,9 +1,10 @@
-import { useCallback } from "react";
 import API_CONFIG from "../configAPI/api";
-export const useSearchPlayer = () => {
-  const requestPlayer = useCallback(
-    async (platform, name) => {
-      const SEARCH_URL = `${API_CONFIG.BASE_URL}${platform}/players?filter[playerNames]=${name}`;
+import { useCallback } from "react";
+
+export const useGetRankedStats = () => {
+  const requestRankedStats = useCallback(
+    async (platform, accountId, seasonId) => {
+      const SEARCH_URL = `${API_CONFIG.BASE_URL}${platform}/players/${accountId}/seasons/${seasonId}/ranked`;
       try {
         const response = await fetch(SEARCH_URL, {
           headers: API_CONFIG.HEADERS,
@@ -16,11 +17,11 @@ export const useSearchPlayer = () => {
         const data = await response.json();
         return data;
       } catch (e) {
-        console.error(e);
+        console.log(e);
         throw e;
       }
     },
     [API_CONFIG.API_KEY]
   );
-  return { requestPlayer };
+  return { requestRankedStats };
 };

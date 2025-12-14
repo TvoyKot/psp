@@ -10,10 +10,19 @@
   background-size: cover;
   background-position: center;
   background-image: url("../../../public/main-bg.jpg");
-  --mainColor: #1C1C1C;
+  --mainColor: #1c1c1c;
 }
 
 .content {
   max-width: 1140px;
   margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  &.single-child {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
 }
