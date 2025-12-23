@@ -6,7 +6,7 @@ import "./playerAccountStatus.scss";
 const PlayerAccountStatus = () => {
   const { playerData } = useContext(PlayerContext);
   const [loading, setLoading] = useState(false);
-  const [playerExists, setPlayerExists] = useState(true);
+  const [playerExists, setPlayerExists] = useState(null);
   const [hasQueried, setHasQueried] = useState(false);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ const PlayerAccountStatus = () => {
       setLoading(true);
       setTimeout(() => {
         setLoading(false);
-        if (!playerData?.data || playerData.data.length === 0) {
+        if (!playerData.data || playerData.data.length === 0) {
           setPlayerExists(false);
         } else {
           setPlayerExists(true);
@@ -24,25 +24,22 @@ const PlayerAccountStatus = () => {
     }
   }, [playerData]);
 
-  const dataExists = playerData && playerData.data && playerData.data.length > 0;
-
-
   if (loading) {
     return <AppSpinner />;
   }
 
-  if (hasQueried && !dataExists) {
-    return <div className="wrapper">Данных об игроке нет</div>;
-  }
+  // if (!playerData.data[0].id) {
+  //   return <div className="wrapper modal">Данных об игроке нет</div>;
+  // }
 
-  if (!playerData || !playerExists) {
-    return <div className="wrapper">Данных об игроке нет</div>;
+    if (!playerData) {
+    return <div className="wrapper modal">Сделайте запрос</div>;
   }
 
   const player = playerData?.data[0];
 
   return (
-    <div className="wrapper">
+    <div className="wrapper-status">
       <p className="player-title">Player account status</p>
       <div className="player-fields">
         <div>Player ID: {player.id}</div>

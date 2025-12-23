@@ -5,4 +5,7 @@
   justify-content: center;
   color: var(--mainColor);
   margin-bottom: 15px;
+  & h2 {
+    font-size: 38px;
+  }
 }

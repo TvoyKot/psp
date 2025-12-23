@@ -4,6 +4,7 @@ import PlatformSelector from "../PlatformSelector/PlatformSelector";
 import AppSpinner from "../Spinner/AppSpinner";
 import PlayerAccountStatus from "../PlayerAccountStatus/PlayerAccountStatus";
 import PlayerRanked from "../PlayerRanked/PlayerRanked";
+import LeadersBoard from "../LeadersBoard/LeadersBoard";
 import { PlayerContext } from "../../context/PlayerContext";
 import "./app.scss";
 
@@ -12,18 +13,19 @@ function App(props) {
   const childrenCount = React.Children.count(props.children);
   const showPlayRanked = rankedStats ? <PlayerRanked /> : null;
   return (
-    // <PlayerProvider>
       <main className="app">
         <div className={`content ${childrenCount === 1 ? "single-child" : ""}`}>
-          <div>{showPlayRanked}</div>
           <div>
             <PlatformSelector />
             <SearchPanel />
             <PlayerAccountStatus />
           </div>
+          <div>{showPlayRanked}</div>
+          {/* <div>
+            <LeadersBoard />
+          </div> */}
         </div>
       </main>
-    // </PlayerProvider>
   );
 }
 

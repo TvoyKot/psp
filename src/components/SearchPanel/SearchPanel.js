@@ -35,6 +35,7 @@ const StyledSearchPanel = styled(TextField)({
 
 function SearchPanel() {
   const [searchPlayer, setSearchPlayer] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
   const {
     setPlayerData,
     selectedPlatform,
@@ -58,6 +59,12 @@ function SearchPanel() {
   const handleSearch = async () => {
     if (searchPlayer.trim()) {
       try {
+        const result = await requestPlayer(selectedPlatform, searchPlayer);
+        if (!result.found) {
+          setPlayerData(null);
+          setErrorMessage(`Игрок ${searchPlayer} не найден`);
+          return;
+        }
         const infoPlayer = await requestPlayer(selectedPlatform, searchPlayer);
         const seasons = await requestSeasons(selectedPlatform);
         const rankedStats = await requestRankedStats(
@@ -78,6 +85,7 @@ function SearchPanel() {
         console.error(e);
         setPlayerData(null);
         setSeasons([]);
+        setErrorMessage("Произошла ошибка при поиске игрока");
       }
     }
   };

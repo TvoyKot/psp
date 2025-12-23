@@ -1,9 +1,10 @@
 import { useCallback } from "react";
 import API_CONFIG from "../configAPI/api";
-export const useSearchPlayer = () => {
-  const requestPlayer = useCallback(
-    async (platform, name) => {
-      const SEARCH_URL = `${API_CONFIG.BASE_URL}${platform}/players?filter[playerNames]=${name}`;
+
+export const useGetLeadersBoard = () => {
+  const requestLeadersBoard = useCallback(
+    async (platform, seasonId) => {
+      const SEARCH_URL = `${API_CONFIG.BASE_URL}${platform}/leaderboards/${seasonId}/squad`;
       try {
         const response = await fetch(SEARCH_URL, {
           headers: API_CONFIG.HEADERS,
@@ -14,12 +15,7 @@ export const useSearchPlayer = () => {
           );
         }
         const data = await response.json();
-        if (!data) {
-          return {
-            found: false, data: null
-          }
-        }
-        return {found: true, data: data.data};
+        return data;
       } catch (e) {
         console.error(e);
         throw e;
@@ -27,5 +23,5 @@ export const useSearchPlayer = () => {
     },
     [API_CONFIG.API_KEY]
   );
-  return { requestPlayer };
+  return { requestLeadersBoard };
 };

@@ -19,7 +19,6 @@ const CustomButton = styled(Button)({
 });
 
 const PlatformSelector = () => {
-  // const [selectedPlatform, setSelectedPlatform] = useState(null);
   const { setSelectedPlatform } = useContext(PlayerContext);
   const platforms = [
     {
