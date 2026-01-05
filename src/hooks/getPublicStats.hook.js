@@ -1,7 +1,9 @@
-import { useCallback } from "react";
+import { useCallback, useContext } from "react";
+import { PlayerContext } from "../context/PlayerContext";
 import API_CONFIG from "../configAPI/api";
 
 export const useGetPublicStats = () => {
+  const { errorMessage, setErrorMessage } = useContext(PlayerContext);
   const requestPublicStats = useCallback(
     async (platform, accountId, seasonId) => {
       const SEARCH_URL = `${API_CONFIG.BASE_URL}${platform}/players/${accountId}/seasons/${seasonId}`;
@@ -13,6 +15,9 @@ export const useGetPublicStats = () => {
           throw new Error(
             `Could not fetch ${SEARCH_URL}, status: ${response.status}`
           );
+        }
+        if (!response.status === 429) {
+          setErrorMessage("Слишком много запросов! Попробуйте позже.");
         }
         const data = await response.json();
         return data;

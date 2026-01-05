@@ -43,7 +43,7 @@
   }
   &-data {
     display: flex;
-    width: 100%;
+    max-width: 100%;
     gap: 60px;
     align-items: flex-start;
     justify-content: center;  
@@ -76,4 +76,24 @@
       }
     }
   }
+}
+.wrapper-data {
+   flex-direction: column;
+   gap: 10px;
+   align-items: center;
+   justify-content: center;
+   &-outer {
+    display: flex;
+     justify-content: center;
+     gap: 40px;
+   }
+   .best-rank {
+    font-size: 22px;
+    &__item {
+      text-transform: uppercase;
+    }
+    & span {
+      color: #fff100;
+    }
+   }
 }

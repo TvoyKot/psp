@@ -1,7 +1,9 @@
-import { useCallback } from "react";
+import { useCallback, useContext } from "react";
 import API_CONFIG from "../configAPI/api";
+import { PlayerContext } from "../context/PlayerContext";
 
 export const useSearchSeasons = () => {
+  const { setErrorMessage } = useContext(PlayerContext);
   const requestSeasons = useCallback(
     async (platform) => {
       const SEARCH_URL = `${API_CONFIG.BASE_URL}${platform}/seasons`;
@@ -10,12 +12,15 @@ export const useSearchSeasons = () => {
           headers: API_CONFIG.HEADERS,
         });
         if (!response.ok) {
+          if (response.status === 429) {
+            setErrorMessage("Слишком много запросов! Попробуйте позже.");
+          }
           throw new Error(
             `Could not fetch ${SEARCH_URL}, status: ${response.status}`
           );
         }
         const data = await response.json();
-        return data
+        return data;
       } catch (e) {
         console.error(e);
         throw e;

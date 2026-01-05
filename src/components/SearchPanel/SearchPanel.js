@@ -7,6 +7,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { useGetRankedStats } from "../../hooks/getRankedStats.hook";
 import { useGetPublicStats } from "../../hooks/getPublicStats.hook";
+import "../PlayerAccountStatus/playerAccountStatus.scss";
 
 const StyledSearchPanel = styled(TextField)({
   width: "400px",
@@ -35,13 +36,17 @@ const StyledSearchPanel = styled(TextField)({
 
 function SearchPanel() {
   const [searchPlayer, setSearchPlayer] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  // const [errorMessage, setErrorMessage] = useState("");
   const {
+    playerData,
     setPlayerData,
     selectedPlatform,
     setSeasons,
     setRankedStats,
     setPublicStats,
+    errorMessage,
+    setErrorMessage,
+    clearError,
   } = useContext(PlayerContext);
   const { requestPlayer } = useSearchPlayer();
   const { requestSeasons } = useSearchSeasons();
@@ -57,15 +62,15 @@ function SearchPanel() {
   };
 
   const handleSearch = async () => {
+    clearError();
     if (searchPlayer.trim()) {
       try {
-        const result = await requestPlayer(selectedPlatform, searchPlayer);
-        if (!result.found) {
+        const infoPlayer = await requestPlayer(selectedPlatform, searchPlayer);
+        if (!infoPlayer.found) {
           setPlayerData(null);
-          setErrorMessage(`Игрок ${searchPlayer} не найден`);
+          setErrorMessage("Игрок ${searchPlayer} не найден");
           return;
         }
-        const infoPlayer = await requestPlayer(selectedPlatform, searchPlayer);
         const seasons = await requestSeasons(selectedPlatform);
         const rankedStats = await requestRankedStats(
           selectedPlatform,
@@ -81,12 +86,24 @@ function SearchPanel() {
         setSeasons(seasons.data);
         setRankedStats(rankedStats);
         setPublicStats(publicStats);
+        clearError();
       } catch (e) {
-        console.error(e);
+        console.error("SearchPanel:", e);
         setPlayerData(null);
         setSeasons([]);
-        setErrorMessage("Произошла ошибка при поиске игрока");
+        if (e.status === 429) {
+          setErrorMessage("Слишком много запросов! Попробуйте позже.");
+        } else if (e.status === 404) {
+          setErrorMessage(`Игрок ${searchPlayer} не найден`);
+        } else {
+          setErrorMessage("Произошла неизвестная ошибка");
+        }
       }
+    }
+  };
+  const showModal = () => {
+    if (playerData === null) {
+      return <div className="wrapper modal">Сделайте запрос</div>;
     }
   };
   return (

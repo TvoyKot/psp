@@ -15,6 +15,10 @@
   backdrop-filter: blur(2px);
   border-color: #fff100;
   margin-bottom: 10px;
+  & .player-title {
+    font-size: 30px;
+    font-weight: 700;
+  }
   & > :first-child {
     margin-bottom: 5px;
   }
@@ -28,4 +32,8 @@
   flex-direction: column;
   align-items: flex-start;
   align-items: center;
+  & span {
+    font-weight: 700;
+    font-size: 20px;
+  }
 }
