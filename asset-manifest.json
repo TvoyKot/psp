@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/psp/static/css/main.7f35395e.css",
+    "main.css": "/psp/static/css/main.a51adb23.css",
     "main.js": "/psp/static/js/main.da03b73f.js",
     "static/media/main-bg.jpg": "/psp/static/media/main-bg.3c881db8475b34ddadee.jpg",
     "static/media/FailedImage.png": "/psp/static/media/FailedImage.b85523a9621c4691c8bc.png",
@@ -8,11 +8,11 @@
     "static/media/xbox-svgrepo-com.svg": "/psp/static/media/xbox-svgrepo-com.0be9bb883cf3932d47e52558e23f85db.svg",
     "static/media/playstation-svgrepo-com.svg": "/psp/static/media/playstation-svgrepo-com.6ad5a52e9d0393c4cb6fe90033f488a4.svg",
     "index.html": "/psp/index.html",
-    "main.7f35395e.css.map": "/psp/static/css/main.7f35395e.css.map",
+    "main.a51adb23.css.map": "/psp/static/css/main.a51adb23.css.map",
     "main.da03b73f.js.map": "/psp/static/js/main.da03b73f.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f35395e.css",
+    "static/css/main.a51adb23.css",
     "static/js/main.da03b73f.js"
   ]
 }
