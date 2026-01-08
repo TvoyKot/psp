@@ -29,7 +29,7 @@ const PlayerAccountStatus = () => {
   }
 
   if (!playerData) {
-    return <ErrorMessage />;
+    return null;
   }
 
   // if (playerExists === null) {

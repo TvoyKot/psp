@@ -91,13 +91,13 @@ function SearchPanel() {
         console.error("SearchPanel:", e);
         setPlayerData(null);
         setSeasons([]);
-        if (e.status === 429) {
-          setErrorMessage("Слишком много запросов! Попробуйте позже.");
-        } else if (e.status === 404) {
-          setErrorMessage(`Игрок ${searchPlayer} не найден`);
-        } else {
-          setErrorMessage("Произошла неизвестная ошибка");
-        }
+        // if (e.status === 429) {
+        //   setErrorMessage("Слишком много запросов! Попробуйте позже.");
+        // } else if (e.status === 404) {
+        //   setErrorMessage(`Игрок ${searchPlayer} не найден`);
+        // } else {
+        //   setErrorMessage("Произошла неизвестная ошибка");
+        // }
       }
     }
   };

@@ -67,16 +67,16 @@ const PlayerRanked = () => {
   }, [
     selectedSeasonID,
     selectedPlatform,
-    selectedSeasonID,
     requestRankedStats,
   ]);
 
   const rankedSquad = rankedStats.data?.attributes.rankedGameModeStats.squad;
   const publicSquad = publicStats.data?.attributes.gameModeStats.squad;
 
-  const currentSeason = seasons.find(
-    (season) => season.id === selectedSeasonID
-  );
+  
+    const currentSeason = seasons.find(
+      (season) => season.id === selectedSeasonID
+    );
 
   const formatSeasons = (seasonId) => {
     const match = seasonId.match(/(\d+)$/);
@@ -217,7 +217,7 @@ const PlayerRanked = () => {
               </p>
             </div>
             <div className="wrapper-data-inner">
-              <p clasName="main-stat">
+              <p className="main-stat">
                 KD:
                 <span>{playerKDA(rankedSquad)}</span>
               </p>

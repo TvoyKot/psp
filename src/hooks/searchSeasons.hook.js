@@ -14,10 +14,9 @@ export const useSearchSeasons = () => {
         if (!response.ok) {
           if (response.status === 429) {
             setErrorMessage("Слишком много запросов! Попробуйте позже.");
+          } else {
+            setErrorMessage("Произошла ошибка! Попробуйте позже.");
           }
-          throw new Error(
-            `Could not fetch ${SEARCH_URL}, status: ${response.status}`
-          );
         }
         const data = await response.json();
         return data;
