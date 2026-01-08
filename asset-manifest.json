@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/TvoyKot/psp/static/css/main.95c50578.css",
-    "main.js": "/TvoyKot/psp/static/js/main.793f6370.js",
-    "static/media/main-bg.jpg": "/TvoyKot/psp/static/media/main-bg.3c881db8475b34ddadee.jpg",
-    "static/media/FailedImage.png": "/TvoyKot/psp/static/media/FailedImage.b85523a9621c4691c8bc.png",
-    "static/media/pc-svgrepo-com.svg": "/TvoyKot/psp/static/media/pc-svgrepo-com.b7a40056e38f9e0b0ec800dd0e5579e6.svg",
-    "static/media/xbox-svgrepo-com.svg": "/TvoyKot/psp/static/media/xbox-svgrepo-com.0be9bb883cf3932d47e52558e23f85db.svg",
-    "static/media/playstation-svgrepo-com.svg": "/TvoyKot/psp/static/media/playstation-svgrepo-com.6ad5a52e9d0393c4cb6fe90033f488a4.svg",
-    "index.html": "/TvoyKot/psp/index.html",
-    "main.95c50578.css.map": "/TvoyKot/psp/static/css/main.95c50578.css.map",
-    "main.793f6370.js.map": "/TvoyKot/psp/static/js/main.793f6370.js.map"
+    "main.css": "/TvoyKot/static/css/main.6dfb8606.css",
+    "main.js": "/TvoyKot/static/js/main.52a57969.js",
+    "static/media/main-bg.jpg": "/TvoyKot/static/media/main-bg.3c881db8475b34ddadee.jpg",
+    "static/media/FailedImage.png": "/TvoyKot/static/media/FailedImage.b85523a9621c4691c8bc.png",
+    "static/media/pc-svgrepo-com.svg": "/TvoyKot/static/media/pc-svgrepo-com.b7a40056e38f9e0b0ec800dd0e5579e6.svg",
+    "static/media/xbox-svgrepo-com.svg": "/TvoyKot/static/media/xbox-svgrepo-com.0be9bb883cf3932d47e52558e23f85db.svg",
+    "static/media/playstation-svgrepo-com.svg": "/TvoyKot/static/media/playstation-svgrepo-com.6ad5a52e9d0393c4cb6fe90033f488a4.svg",
+    "index.html": "/TvoyKot/index.html",
+    "main.6dfb8606.css.map": "/TvoyKot/static/css/main.6dfb8606.css.map",
+    "main.52a57969.js.map": "/TvoyKot/static/js/main.52a57969.js.map"
   },
   "entrypoints": [
-    "static/css/main.95c50578.css",
-    "static/js/main.793f6370.js"
+    "static/css/main.6dfb8606.css",
+    "static/js/main.52a57969.js"
   ]
 }
