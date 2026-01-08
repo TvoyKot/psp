@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1490dff9.css",
+    "main.js": "/static/js/main.7758995c.js",
+    "static/media/main-bg.jpg": "/static/media/main-bg.3c881db8475b34ddadee.jpg",
+    "static/media/FailedImage.png": "/static/media/FailedImage.b85523a9621c4691c8bc.png",
+    "static/media/pc-svgrepo-com.svg": "/static/media/pc-svgrepo-com.b7a40056e38f9e0b0ec800dd0e5579e6.svg",
+    "static/media/xbox-svgrepo-com.svg": "/static/media/xbox-svgrepo-com.0be9bb883cf3932d47e52558e23f85db.svg",
+    "static/media/playstation-svgrepo-com.svg": "/static/media/playstation-svgrepo-com.6ad5a52e9d0393c4cb6fe90033f488a4.svg",
+    "index.html": "/index.html",
+    "main.1490dff9.css.map": "/static/css/main.1490dff9.css.map",
+    "main.7758995c.js.map": "/static/js/main.7758995c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1490dff9.css",
+    "static/js/main.7758995c.js"
+  ]
+}
